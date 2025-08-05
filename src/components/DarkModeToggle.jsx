@@ -1,3 +1,5 @@
+import { Sun, Moon } from 'lucide-react';
+
 export default function DarkModeToggle({ dark, setDark }) {
   const toggleMode = () => setDark(!dark);
 
@@ -9,7 +11,7 @@ export default function DarkModeToggle({ dark, setDark }) {
         ${dark ? 'bg-gray-800 text-white' : 'bg-yellow-300 text-yellow-800'}
       `}
     >
-      {dark ? '🌕' : '☀️'}
+      {dark ? <Moon size={20} /> : <Sun size={20} />}
     </button>
   );
 }
