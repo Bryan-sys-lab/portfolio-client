@@ -8,6 +8,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import AdminLogin from './components/AdminLogin'; // moved to own file
+import DarkModeToggle from './components/DarkModeToggle';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
@@ -62,24 +63,20 @@ export default function App() {
             <Link to="/Education" className="hover:underline">Education</Link>
             <Link to="/Contact" className="hover:underline">Contact</Link>
             {isAuthenticated && <Link to="/Admin" className="hover:underline">Admin</Link>}
-            <button
-              onClick={() => setDark(prev => !prev)}
-              className="p-2 px-4 rounded bg-gray-700 text-white hover:bg-gray-600"
-              aria-label="Toggle dark mode"
-            >
-              {dark ? 'Light' : 'Dark'}
-            </button>
+          <DarkModeToggle dark={dark} setDark={setDark} />
+
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 px-4 rounded bg-gray-700 text-white hover:bg-gray-600"
-              aria-label="Toggle mobile menu"
-            >
-              {menuOpen ? 'X' : '☰'}
-            </button>
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-white hover:bg-gray-600 transition-colors duration-300"
+  aria-label="Toggle mobile menu"
+>
+  {menuOpen ? '✕' : '☰'}
+</button>
+
           </div>
         </nav>
       </header>
@@ -105,13 +102,9 @@ export default function App() {
       )}
 
       {/* Mobile Dark Mode Toggle */}
-      <button
-        onClick={() => setDark(prev => !prev)}
-        className="md:hidden fixed bottom-4 right-4 z-50 p-2 px-4 rounded bg-gray-700 text-white hover:bg-gray-600"
-        aria-label="Toggle dark mode"
-      >
-        {dark ? 'Light' : 'Dark'}
-      </button>
+ <div className="md:hidden fixed bottom-4 right-4 z-50">
+  <DarkModeToggle dark={dark} setDark={setDark} />
+</div>
 
       <main className="flex-grow p-4 max-w-5xl mx-auto w-full">
         <Routes>
