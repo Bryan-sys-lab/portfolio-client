@@ -1,10 +1,12 @@
+// src/components/SocialIcons.jsx
 
 import { motion } from 'framer-motion';
 import {
   FaGithub,
   FaTwitter,
   FaTelegramPlane,
-  FaLinkedin
+  FaLinkedin,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 const socials = [
@@ -31,6 +33,12 @@ const socials = [
     icon: <FaLinkedin />,
     url: 'https://linkedin.com/in/your_username',
     color: 'text-blue-700 dark:text-blue-400',
+  },
+  {
+    name: 'WhatsApp',
+    icon: <FaWhatsapp />,
+    url: 'https://wa.me/254712345678',
+    color: 'text-green-500',
   },
 ];
 
