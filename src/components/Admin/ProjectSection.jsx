@@ -146,6 +146,14 @@ export default function ProjectSection({ authHeader }) {
           />
 
           <input
+            type="text"
+            placeholder="GitHub Link"
+            value={form.github_link || ''}
+            onChange={e => setForm(prev => ({ ...prev, github_link: e.target.value }))}
+            className="w-full p-2 border rounded text-black dark:text-white dark:bg-gray-900"
+          />
+
+          <input
             type="file"
             accept="image/*"
             onChange={e => setForm(prev => ({ ...prev, image: e.target.files[0] }))}
@@ -212,6 +220,16 @@ export default function ProjectSection({ authHeader }) {
             <div className="text-sm text-gray-600 dark:text-gray-300">
               Tech: {Array.isArray(p.tech) ? p.tech.join(', ') : p.tech}
             </div>
+            {p.link && (
+              <div className="text-sm text-gray-600 dark:text-gray-300">
+                Link: <a href={p.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{p.link}</a>
+              </div>
+            )}
+            {p.github_link && (
+              <div className="text-sm text-gray-600 dark:text-gray-300">
+                GitHub: <a href={p.github_link} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{p.github_link}</a>
+              </div>
+            )}
             <div className="space-x-2 mt-2">
               <button
                 onClick={() => {

@@ -2,6 +2,7 @@ import ProjectSection from './Admin/ProjectSection';
 import ExperienceSection from './Admin/ExperienceSection';
 import EducationSection from './Admin/EducationSection';
 import SocialSection from './Admin/SocialSection';
+import AboutSection from './Admin/AboutSection';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
@@ -25,6 +26,7 @@ export default function Admin({ authHeader, setIsAuthenticated, setUsername, set
         <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded">Logout</button>
       </div>
 
+      <AboutSection authHeader={authHeader} />
       <ProjectSection authHeader={authHeader} />
       <ExperienceSection authHeader={authHeader} />
       <EducationSection authHeader={authHeader} />

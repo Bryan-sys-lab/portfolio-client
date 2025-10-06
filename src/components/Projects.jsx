@@ -131,6 +131,18 @@ export default function Projects() {
                           Visit Project
                         </a>
                       )}
+
+                      {project.github_link && (
+                        <a
+                          href={project.github_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="View on GitHub"
+                          className="inline-block mt-2 ml-2 text-sm px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition"
+                        >
+                          View on GitHub
+                        </a>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>

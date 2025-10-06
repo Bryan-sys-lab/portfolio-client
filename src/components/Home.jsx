@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import About from './About';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
 
@@ -108,6 +109,9 @@ export default function Home() {
           Contact Me
         </Link>
       </motion.div>
+
+      {/* About Section */}
+      <About />
     </div>
   );
 }
